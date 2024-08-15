@@ -5,23 +5,23 @@ import { View, Text, StyleSheet, ScrollView } from 'react-native';
 const DetailsViewScreen = ({ route }) => {
   // Destructure item from route parameters
   const { item } = route.params;
-  // Layout
-  const [orientation, setOrientation] = useState('portrait');
+  // // Layout
+  // const [orientation, setOrientation] = useState('portrait');
 
 
-  useEffect(() => {
-    const updateOrientation = () => {
-      const { width, height } = Dimensions.get('window');
-      setOrientation(width > height ? 'landscape' : 'portrait');
-    };
+  // useEffect(() => {
+  //   const updateOrientation = () => {
+  //     const { width, height } = Dimensions.get('window');
+  //     setOrientation(width > height ? 'landscape' : 'portrait');
+  //   };
     
-    Dimensions.addEventListener('change', updateOrientation);
-    updateOrientation(); // Initial call
+  //   Dimensions.addEventListener('change', updateOrientation);
+  //   updateOrientation(); // Initial call
 
-    return () => {
-      Dimensions.removeEventListener('change', updateOrientation);
-    };
-  }, []);
+  //   return () => {
+  //     Dimensions.removeEventListener('change', updateOrientation);
+  //   };
+  // }, []);
 
 
   return (
