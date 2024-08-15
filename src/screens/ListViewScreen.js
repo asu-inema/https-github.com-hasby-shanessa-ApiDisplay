@@ -10,11 +10,32 @@ const ListViewScreen = ({ navigation }) => {
   const [loading, setLoading] = useState(true);
   // State to manage error messages
   const [error, setError] = useState(null);
+  // Setting layout
+  const [orientation, setOrientation] = useState('portrait');
 
-  // Effect hook to fetch data on component mount
+
+// Effect hook to fetch data on component mount
   useEffect(() => {
     fetchData();
-  }, []);
+
+  const updateOrientation = () => {
+    const { width, height } = Dimensions.get('window');
+    setOrientation(width > height ? 'landscape' : 'portrait');
+  };
+  
+  Dimensions.addEventListener('change', updateOrientation);
+  updateOrientation(); // Initial call
+
+  return () => {
+    Dimensions.removeEventListener('change', updateOrientation);
+  };
+}, []);
+
+
+  // // Effect hook to fetch data on component mount
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
 
   // Function to fetch data from the API
   const fetchData = async () => {
