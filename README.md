@@ -1,50 +1,29 @@
-# Welcome to your Expo app 👋
+This React Native application consists of two screens: a List View and a Details View. The app fetches data from the API endpoint https://api.restful-api.dev/objects and displays it on the respective screens. The app is designed to be responsive, so it works on both mobile devices and the web.
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Have nodejs installed and I installed Expo CLI globally, 
+Install required dependencies by running "npm install"
+Start the development server "npm run start" or npx expo start then choose w if you want to open from the web.
 
-## Get started
+List View: The first screen shows a list of items fetched from https://api.restful-api.dev/objects.
+Details View: Tap or click on any item in the list to view detailed information about that item.
 
-1. Install dependencies
+To stop the Expo development server, press Ctrl + C in the terminal.
 
-   ```bash
-   npm install
-   ```
 
-2. Start the app
+PROJECT STRUCTURE
+ApiDisplayApp/
+├── App.js                       # Entry point of the app
+├── src
+   ├── components/               # Reusable components
+      │   ├── ItemList.js        # Component for rendering an item in the List View
+      │   └── ItemDetails.js     # Component for rendering details in the Details View
+   ├── screens/                  # App screens
+      │   ├── ListViewScreen.js  # List View screen
+      │   └── DetailsViewScreen.js # Details View screen
+   ├── utils/                   # Utils
+      │   └── deviceUtils.js    # Utility functions for device detection
+├── assets/                     # Images and other assets
+├── package.json                # NPM package file
+└── README.md                   # This file (for guide)
 
-   ```bash
-    npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+There was no design followed but in other versions the design will be improved.
